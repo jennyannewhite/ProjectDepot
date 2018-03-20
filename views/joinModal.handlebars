@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Project Depot</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="" />
+      <meta name="author" content="http://bootstraptaste.com" />
+      <!-- css -->
+      <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="/assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+      <link href="/assets/css/jcarousel.css" rel="stylesheet" />
+      <link href="/assets/css/flexslider.css" rel="stylesheet" />
+      <link href="/assets/css/style.css" rel="stylesheet" />
+      <!-- Theme skin -->
+      <link href="/assets/css/skins/default.css" rel="stylesheet" />
+      <!-- =======================================================
+         Theme Name: Moderna
+         Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+         Author: BootstrapMade
+         Author URL: https://bootstrapmade.com
+         ======================================================= -->
+   </head>
+   <body>
+      <!-- start header -->
+      <header>
+         <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand"><span>P</span>roject Depot</a>
+               </div>
+               <div class="navbar-collapse collapse ">
+                  <ul class="nav navbar-nav">
+                     {{#if user}}
+                     <li class="active"><a href="/">Home</a></li>
+                     <li><a href="/account">Account</a></li>
+                     <li><a href="#">Past Projects</a></li>
+                     <li><a href="/logout">Log Out</a></li>
+                     <h4 class="hello">Hello, {{user.displayName}}</h4>
+                     {{else}}
+                     <li class="active"><a href="/">Home</a></li>
+                     <li><a href="#">Past Projects</a></li>
+                     <li><a href="/login">Login</a></li>
+                     <h4 class="welcome">Welcome! Please log in.</h4>
+                     {{/if}}
+                     {{msg}}
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- End Header -->
+      <!-- Start of carousel -->
+      <div class="container">
+         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1"></li>
+               <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+               <div class="item active">
+                  <img src="/assets/img/slides/img2.jpg" width="100%" alt="">
+                  <div class="flex-caption">
+                    <h3>EXPLORE</h3>
+                    <p>Explore projects, join a team and begin! It's that simple.</p>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="/assets/img/slides/img1.jpeg" width="100%" alt="">
+                  <div class="flex-caption">
+                    <h3>INNOVATE</h3>
+                    <p>Put your skills to work and start building!</p>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="/assets/img/slides/img3.jpeg" width="100%" alt="">
+                  <div class="flex-caption">
+                    <h3>CONNECT</h3>
+                    <p>Be part of a community passionate about web development.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End of carousel -->
+      <!-- Second Header Section -->
+      <section class="callaction">
+         <div class="container">
+            <div class="row">
+               <!-- Inputting Idea -->
+               <div class="col-lg-6 col-lg-offset-3">
+                  <div class="big-cta">
+                     <div class="cta-text">
+                        <h2><span>Project Depot</span> </h2>
+                     </div>
+                     <form class="form-horizontal" method="POST" action="/add/" class="button-size">
+                        <fieldset>
+                           <legend class="text-center col-lg-12">Write Your Idea</legend>
+                           <br>
+                           <div class="form-group">
+                              <div class="col-lg-8 col-lg-offset-2">
+                                 <textarea placeholder="Enter Idea" type="text" name="body" maxlength="140" minlength="2" class="form-control" required></textarea>
+                                 <br>
+                              </div>
+                              <div class="col-lg-4 col-lg-offset-4">
+                                 <input placeholder="# Needed" type="number" min='2' max='5' name="groupLimit" class="form-control" required>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <center><div class="col-lg-6 col-lg-offset-3">
+                                 <button type="submit" class="btn btn-success">Idea!</button>
+                              </div></center>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+      </section>
+
+
+<!-- All Ideas Section -->
+<section id="content">
+   <!-- For each post, create a div col-lg-3 -->
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="row">
+            {{#each posts}}
+               <div class="col-lg-3">
+                  <p>
+                  <form action="/post/join" method="POST" class="join">
+                     <input type="hidden" name="postId" value="{{this.id}}">
+                     <input type="hidden" name="groupLimit" value="{{this.groupLimit}}">
+                     <div class="box-bottom">
+                        <button type="submit" id="build" margin="20px" class="btn btn-success">Build this Idea</button>
+                     </div>
+                  </form>
+                  </p>
+                  <div class="box">
+                     <div class="box-gray aligncenter">
+                        <div class="icon">
+                           {{body}}
+                           {{number}}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {{/each}}
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+<!--footer -->
+<footer>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3">
+            <div class="widget">
+               <h5 class="widgetheading">Get in touch with us</h5>
+               <address>
+                  <strong>Project Depot Inc.</strong><br>
+                  9006 West Corner Avenue, Suite 501<br>
+                  Someplace 16425 Earth
+               </address>
+               <p>
+                  <i class="icon-phone"></i> (605) 871-2222 <br>
+                  <i class="icon-envelope-alt"></i> projectdepotteam321@gmail.com
+               </p>
+            </div>
+         </div>
+         <div class="col-lg-3">
+            <div class="widget">
+               <h5 class="widgetheading">Pages</h5>
+               <ul class="link-list">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/account">Account Information</a></li>
+                  <li><a href="/terms">Terms | Conditions</a></li>
+                  <li><a href="/privacy">Privacy Policy</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-lg-3">
+            <div class="widget">
+               <h5 class="widgetheading">Popular Projects</h5>
+               <ul class="link-list">
+                  <li>Virtual Whiteboard</li>
+                  <li>Find My Father - An easy-to-use app for lost children</li>
+                  <li>Facial Recognition for Badgers</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="sub-footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="copyright">
+                  <p>&copy; Project Depot. All right reserved.</p>
+                  <div class="credits">
+                     <!--
+                        All the links in the footer should remain intact.
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Moderna
+                        -->
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <ul class="social-network">
+                  <li><a target="_blank" href="https://www.facebook.com/projectdepot/" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                  <li><a target="_blank" href="https://twitter.com/projectdepot" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                  <li><a target="_blank" href="https://plus.google.com/u/0/100519557342838139555" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+<!-- Modal -->
+<div class="modal fade" id="joined" tabindex="-1" role="dialog" aria-labelledby="fullGroup" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center><h3 class="modal-title" id="fullGroup">Awesome</h3></center>
+      </div>
+      <div class="modal-body">
+      <center><h5>Thanks for joining this group!</h5></center>
+      </div>
+      <div class="modal-footer">
+
+        <form class="form-horizontal" method="GET" action="/" class="button-size">
+            <center><button type="submit" class="btn btn-success">Got it!</button></center>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.easing.1.3.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/google-code-prettify/prettify.js"></script>
+<script src="/assets/js/jquery.flexslider.js"></script>
+<script src="/assets/js/animate.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script type="text/javascript">
+
+   $("#joined").modal();
+
+   $(document).ready(function () {
+       $('.carousel').carousel({
+           interval: 2500
+       });
+   });
+</script>
+</body>
+</html>
+

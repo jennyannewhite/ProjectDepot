@@ -1,0 +1,37 @@
+{
+  "name": "ProjectDepot",
+  "version": "1.0.0",
+  "description": "Join a Project and Collaborate Now!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonnyhughes/ProjectDepot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonnyhughes/ProjectDepot/issues"
+  },
+  "homepage": "https://github.com/sonnyhughes/ProjectDepot#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "nodemailer": "^4.6.3",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.37.3",
+    "sequelize-cli": "^4.0.0",
+    "util": "^0.10.3"
+  }
+}

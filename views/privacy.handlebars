@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Project Depot</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="" />
+      <meta name="author" content="http://bootstraptaste.com" />
+      <!-- css -->
+      <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="/assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+      <link href="/assets/css/jcarousel.css" rel="stylesheet" />
+      <link href="/assets/css/flexslider.css" rel="stylesheet" />
+      <link href="/assets/css/style.css" rel="stylesheet" />
+      <!-- Theme skin -->
+      <link href="/assets/css/skins/default.css" rel="stylesheet" />
+      <!-- =======================================================
+         Theme Name: Moderna
+         Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+         Author: BootstrapMade
+         Author URL: https://bootstrapmade.com
+         ======================================================= -->
+   </head>
+   <body>
+      <!-- start header -->
+      <header>
+         <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand"><span>P</span>roject Depot</a>
+               </div>
+               <div class="navbar-collapse collapse ">
+                  <ul class="nav navbar-nav welcome-style">
+                     {{#if user}}
+                     <li class="active"><a href="/">Home</a></li>
+                     <li><a href="/account">Account</a></li>
+                     <li><a href="/past">Past Projects</a></li>
+                     <li><a href="/logout">Log Out</a></li>
+                     <h4 class="hello">Hello, {{user.displayName}}</h4>
+                     {{else}}
+                     <li class="active"><a href="/">Home</a></li>
+                     <li><a href="/past">Past Projects</a></li>
+                     <li><a href="/auth/github/callback">Login With Github</a></li>
+                     <h4 class="welcome">Welcome! Please log in.</h4>
+                     {{/if}}
+                     {{msg}}
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- End Header -->
+      <section id="inner-headline">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <ul class="breadcrumb">
+                     <li><a href="/"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+                     <li class="active">Privacy Policy</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+               <br>
+               <h2>
+                  Data Policy
+               </h2>
+               <h3>
+                  1. Terms
+               </h3>
+               <p>
+                  By accessing this web site, you are agreeing to be bound by these
+                  web site Terms and Conditions of Use, all applicable laws and regulations,
+                  and agree that you are responsible for compliance with any applicable local
+                  laws. If you do not agree with any of these terms, you are prohibited from
+                  using or accessing this site. The materials contained in this web site are
+                  protected by applicable copyright and trade mark law.
+               </p>
+               <h3>
+                  2. Use License
+               </h3>
+               <ol type="a">
+                  <li>
+                     Permission is granted to temporarily download one copy of the materials
+                     (information or software) on Project Depot Inc.'s web site for personal,
+                     non-commercial transitory viewing only. This is the grant of a license,
+                     not a transfer of title, and under this license you may not:
+                     <ol type="i">
+                        <li>modify or copy the materials;</li>
+                        <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                        <li>attempt to decompile or reverse engineer any software contained on Project Depot Inc.'s web site;</li>
+                        <li>remove any copyright or other proprietary notations from the materials; or</li>
+                        <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                     </ol>
+                  </li>
+                  <li>
+                     This license shall automatically terminate if you violate any of these restrictions and may be terminated by Project Depot Inc. at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+                  </li>
+               </ol>
+               <h3>
+                  3. Disclaimer
+               </h3>
+               <ol type="a">
+                  <li>
+                     The materials on Project Depot Inc.'s web site are provided "as is". Project Depot Inc. makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Project Depot Inc. does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
+                  </li>
+               </ol>
+               <h3>
+                  4. Limitations
+               </h3>
+               <p>
+                  In no event shall Project Depot Inc. or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Project Depot Inc.'s Internet site, even if Project Depot Inc. or a Project Depot Inc. authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+               </p>
+               <h3>
+                  5. Revisions and Errata
+               </h3>
+               <p>
+                  The materials appearing on Project Depot Inc.'s web site could include technical, typographical, or photographic errors. Project Depot Inc. does not warrant that any of the materials on its web site are accurate, complete, or current. Project Depot Inc. may make changes to the materials contained on its web site at any time without notice. Project Depot Inc. does not, however, make any commitment to update the materials.
+               </p>
+               <h3>
+                  6. Links
+               </h3>
+               <p>
+                  Project Depot Inc. has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Project Depot Inc. of the site. Use of any such linked web site is at the user's own risk.
+               </p>
+               <h3>
+                  7. Site Terms of Use Modifications
+               </h3>
+               <p>
+                  Project Depot Inc. may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
+               </p>
+               <h3>
+                  8. Governing Law
+               </h3>
+               <p>
+                  Any claim relating to Project Depot Inc.'s web site shall be governed by the laws of the State of Chicago without regard to its conflict of law provisions.
+               </p>
+               <p>
+                  General Terms and Conditions applicable to Use of a Web Site.
+               </p>
+               <h2>
+                  Privacy Policy
+               </h2>
+               <p>
+                  Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
+               </p>
+               <ul>
+                  <li>
+                     Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
+                  </li>
+                  <li>
+                     We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.
+                  </li>
+                  <li>
+                     We will only retain personal information as long as necessary for the fulfillment of those purposes.
+                  </li>
+                  <li>
+                     We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.
+                  </li>
+                  <li>
+                     Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.
+                  </li>
+                  <li>
+                     We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
+                  </li>
+                  <li>
+                     We will make readily available to customers information about our policies and practices relating to the management of personal information.
+                  </li>
+               </ul>
+               <p>
+                  We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.
+               </p>
+               </br>
+            </div>
+         </div>
+      </div>
+      <!-- footer -->
+      <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3">
+                  <div class="widget">
+                     <h5 class="widgetheading">Get in touch with us</h5>
+                     <address>
+                        <strong>Project Depot Inc.</strong><br>
+                        9006 West Corner Avenue, Suite 501<br>
+                        Someplace 16425 Earth
+                     </address>
+                     <p>
+                        <i class="icon-phone"></i> (605) 871-2222 <br>
+                        <i class="icon-envelope-alt"></i> projectdepotteam321@gmail.com
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class="widget">
+                     <h5 class="widgetheading">Pages</h5>
+                     <ul class="link-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/account">Account Information</a></li>
+                        <li><a href="/terms">Terms | Conditions</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <div class="widget">
+                     <h5 class="widgetheading">Popular Projects</h5>
+                     <ul class="link-list">
+                        <li>Virtual Whiteboard</li>
+                        <li>Find My Father - An easy-to-use app for lost children</li>
+                        <li>Facial Recognition for Badgers</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="sub-footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="copyright">
+                        <p>&copy; Sandbox. All right reserved.</p>
+                        <div class="credits">
+                           <!--
+                              All the links in the footer should remain intact.
+                              You can delete the links only if you purchased the pro version.
+                              Licensing information: https://bootstrapmade.com/license/
+                              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Moderna
+                              -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <ul class="social-network">
+                        <li><a target="_blank" href="https://www.facebook.com/projectdepot/" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a target="_blank" href="https://twitter.com/projectdepot" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a target="_blank" href="https://plus.google.com/u/0/100519557342838139555" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      </div>
+      <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="/assets/js/jquery.js"></script>
+      <script src="/assets/js/jquery.easing.1.3.js"></script>
+      <script src="/assets/js/bootstrap.min.js"></script>
+      <script src="/assets/js/google-code-prettify/prettify.js"></script>
+      <script src="/assets/js/jquery.flexslider.js"></script>
+      <script src="/assets/js/animate.js"></script>
+      <script src="/assets/js/custom.js"></script>
+      <script src="/assets/js/join.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             $('.carousel').carousel({
+                 interval: 2500
+             });
+         });
+      </script>
+   </body>
+</html>
