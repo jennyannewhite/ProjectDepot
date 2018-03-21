@@ -12,8 +12,8 @@ var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
 //for github passport
-// var GITHUB_CLIENT_ID = "c0bd269a1176ef95c5b4";
-// var GITHUB_CLIENT_SECRET = "5fbb09797aa6cb40d91716010281133fc7e2b38c";
+var GITHUB_CLIENT_ID = "1d4e250a79dbc5af6aca";
+var GITHUB_CLIENT_SECRET = "6957c43f04f164dd0c0bd3ada98f039ad8360602";
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -34,19 +34,19 @@ passport.deserializeUser(function(obj, done) {
 //   Strategies in Passport require a `verify` function, which accept
 //   credentials (in this case, an accessToken, refreshToken, and GitHub
 //   profile), and invoke a callback with a user object.
-// passport.use(new GitHubStrategy({
-//     clientID: GITHUB_CLIENT_ID,
-//     clientSecret: GITHUB_CLIENT_SECRET,
-//     callbackURL: "https://project-depot.herokuapp.com/auth/github/callback"
-//   },
-//   function(accessToken, refreshToken, profile, done) {
+passport.use(new GitHubStrategy({
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
+    callbackURL: "https://salty-retreat-54648.herokuapp.com/auth/github/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
 
-//     process.nextTick(function () {
+    process.nextTick(function () {
       
-//       return done(null, profile);
-//     });
-//   }
-// ));
+      return done(null, profile);
+    });
+  }
+));
 
 
 
